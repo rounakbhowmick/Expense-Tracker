@@ -1,0 +1,10 @@
+<div class="overview-main" *ngIf="IsLoggedIN">
+  <div class="status">
+    <app-budgetoverview></app-budgetoverview>
+    <app-categorywiseoverview></app-categorywiseoverview>
+  </div>
+
+  <button (click)="clicked()">Add Expense</button>
+  <app-form *ngIf="formdisplay"></app-form>
+  <app-table></app-table>
+</div>

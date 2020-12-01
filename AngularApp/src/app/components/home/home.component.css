@@ -1,0 +1,8 @@
+.overview {
+  width: 100%;
+
+  display: flex;
+}
+.status {
+  display: flex;
+}

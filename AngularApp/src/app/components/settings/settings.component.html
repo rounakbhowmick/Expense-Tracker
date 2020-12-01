@@ -1,0 +1,33 @@
+<div class="settings-main" *ngIf="IsLoggedIN">
+  <div class="form">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div formGroupName="userData">
+        <div class="total-budget form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="entirebudget"
+            formControlName="entirebudget"
+            placeholder="Enter budget"
+          />
+          <button [disabled]="!signupForm.get('userData.entirebudget').valid">
+            Update
+          </button>
+        </div>
+        <!-- Categories -->
+        <div class="total-budget form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="category"
+            formControlName="category"
+            placeholder="Enter category"
+          />
+          <button [disabled]="!signupForm.get('userData.category').valid">
+            Update
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

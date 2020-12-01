@@ -1,0 +1,8 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+img {
+  width: 2rem;
+  cursor: pointer;
+}
+.strike {
+  text-decoration: line-through;
+}

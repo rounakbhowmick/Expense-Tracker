@@ -1,0 +1,30 @@
+<table class="table">
+  <thead>
+    <!-- <tr>
+      <th scope="col" *ngFor="let keys of expensevalueskeys">{{ keys }}</th>
+    </tr> -->
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Itemname</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr [ngClass]="{ strike: i.deleted }" *ngFor="let i of expensevales">
+      <td>
+        <img src="../../../assets/delete.png" (click)="delete(i)" alt="" />
+        {{ i.category }}
+      </td>
+      <td>
+        <h3>{{ i.itemname }}</h3>
+      </td>
+      <td>
+        <h3>{{ i.amount }}</h3>
+      </td>
+      <td>
+        <h3>{{ i.date }}</h3>
+      </td>
+    </tr>
+  </tbody>
+</table>

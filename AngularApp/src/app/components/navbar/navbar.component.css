@@ -1,0 +1,11 @@
+li {
+  list-style: none;
+  border-bottom: 1px solid black;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+.navbar-parts {
+  border: 1px solid rgb(0, 0, 0);
+  width: 100%;
+  height: 100vh;
+}

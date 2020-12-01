@@ -1,0 +1,8 @@
+.settings-main {
+  width: 100%;
+}
+.total-budget,
+.categories {
+  display: flex;
+  justify-content: space-evenly;
+}

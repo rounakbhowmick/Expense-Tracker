@@ -1,0 +1,65 @@
+<div class="container" *ngIf="!IsLoggedIN">
+  <div class="form">
+    <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+      <div formGroupName="userData">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="name"
+            placeholder="Enter your full name"
+          />
+          <span
+            *ngIf="
+              !regForm.get('userData.name').valid &&
+              regForm.get('userData.name').touched
+            "
+            class="help-block"
+            >Please enter a valid name</span
+          >
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="email"
+            id="email"
+            placeholder="Email"
+          />
+          <span
+            *ngIf="
+              !regForm.get('userData.email').valid &&
+              regForm.get('userData.email').touched
+            "
+            class="help-block"
+            >Please enter a valid email</span
+          >
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="phonenumber"
+            formControlName="phonenumber"
+            placeholder="Enter your phone number"
+          />
+          <span
+            *ngIf="
+              !regForm.get('userData.phonenumber').valid &&
+              regForm.get('userData.phonenumber').touched
+            "
+            class="help-block"
+            >Please enter a valid phonenumber</span
+          >
+        </div>
+      </div>
+      <div class="button">
+        <button [disabled]="regForm.invalid" class="btn" type="submit">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
