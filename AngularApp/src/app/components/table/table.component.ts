@@ -14,6 +14,10 @@ export class TableComponent implements OnInit {
   constructor(private expenseservice: ExpenserecordService) {}
 
   ngOnInit(): void {
+    this.refresh();
+  }
+
+  refresh() {
     this.expenseservice.expenserecord.subscribe((value: any) => {
       this.expensevales = value;
       let tempexpense = 0;
@@ -38,9 +42,10 @@ export class TableComponent implements OnInit {
     let obj = {
       expensedetails: responsedata[0].expensedetails,
     };
-    this.expenseservice
-      .updateexpense(obj)
-      .subscribe((response) => console.log(response));
+    this.expenseservice.updateexpense(obj).subscribe((response) => {
+      this.refresh();
+      console.log(response);
+    });
     //console.log(responsedata[0].expensedetails);
   }
   delete(i) {

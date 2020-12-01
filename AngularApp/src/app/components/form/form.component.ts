@@ -62,7 +62,7 @@ export class FormComponent implements OnInit {
         deleted: false,
       },
     };
-
+    this.expenseForm.reset();
     this.expenseservice.addexpenserecord(newobjFormat.expensedetails);
     this.expenseservice.addinfo(newobjFormat).subscribe();
     this.submitted = false;

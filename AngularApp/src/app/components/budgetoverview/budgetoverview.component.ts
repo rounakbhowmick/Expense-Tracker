@@ -35,7 +35,9 @@ export class BudgetoverviewComponent implements OnInit {
   spendpercent(totalbudget, totalexpense) {
     if (totalbudget > 0 && totalexpense > 0) {
       let temp = ((totalbudget - totalexpense) / totalbudget) * 100;
-      this.spendpercentage = 100 - temp;
+      var num = new Number(100 - temp);
+      this.spendpercentage = num.toPrecision(2);
+      // this.spendpercentage = 100 - temp;
     }
   }
   // fetchtotalbudget() {
